@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import util from 'util';
+import routes from './routes';
+
 const app = express();
-const util = require('util');
 
 (function initializeRoutes() {
-  const routes = require('./routes');
   for (route in routes) {
     routes[route](app);
   }
