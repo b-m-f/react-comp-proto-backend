@@ -1,5 +1,5 @@
-import ComponentController from './ComponentController';
+const ComponentController = name => {
+  return name;
+};
 
-const Controllers = [ComponentController];
-
-export default Controllers;
+export default ComponentController;

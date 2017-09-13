@@ -1,11 +1,10 @@
 import express from 'express';
-import util from 'util';
-import Routes from './routes';
+import Routes from './routes.mjs';
 
 const app = express();
 
 (function initializeRoutes() {
-  for (route in Routes) {
+  for (let route in Routes) {
     Routes[route](app);
   }
 })();

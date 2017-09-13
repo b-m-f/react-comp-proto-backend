@@ -7,7 +7,8 @@ const Routes = {
     }),
   components: app =>
     app.get('/component/:name', function(req, res) {
-      res.send(req.params.name);
+      const component = ComponentController(req.params.name);
+      res.send(component);
     }),
 };
 
