@@ -1,12 +1,12 @@
 import express from 'express';
 import util from 'util';
-import routes from './routes';
+import Routes from './Routes';
 
 const app = express();
 
 (function initializeRoutes() {
-  for (route in routes) {
-    routes[route](app);
+  for (route in Routes) {
+    Routes[route](app);
   }
 })();
 

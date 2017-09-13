@@ -1,8 +1,10 @@
-const routes = {
+import Controllers from './Controllers';
+
+const Routes = {
   root: app =>
     app.get('/', function(req, res) {
       res.send('Hello World!');
     }),
 };
 
-module.exports = routes;
+export default Routes;
