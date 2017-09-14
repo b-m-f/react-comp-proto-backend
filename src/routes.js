@@ -1,5 +1,6 @@
-import ComponentController from './controllers/componentController';
-import util from 'util';
+const ComponentController = require('./controllers/componentController');
+const util = require('util');
+const {log} = require('./logger');
 
 const Routes = {
   root: app =>
@@ -8,10 +9,10 @@ const Routes = {
     }),
   components: async app =>
     app.get('/component/:name', async function(req, res) {
-      console.log(util.inspect(ComponentController.addComponent));
+      log(util.inspect(ComponentController.addComponent));
       const result = await ComponentController.addComponent(req.params.name);
       res.send(result);
     }),
 };
 
-export default Routes;
+module.exports = Routes;

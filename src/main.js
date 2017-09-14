@@ -1,7 +1,7 @@
-import express from 'express';
-import Routes from './routes.mjs';
-import DatabaseAdapter from './database';
-import log from './logger';
+const express = require('express');
+const Routes = require('./routes.mjs');
+const DatabaseAdapter = require('./database');
+const {log} = require('./logger');
 
 const app = express();
 DatabaseAdapter.init();

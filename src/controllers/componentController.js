@@ -1,6 +1,6 @@
 const {getDb} = require('../database');
 const assert = require('assert');
-const log = require('../logger');
+const {log} = require('../logger');
 
 const ComponentController = {
   addComponent: async component => {
