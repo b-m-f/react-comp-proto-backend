@@ -5,18 +5,18 @@ const {log} = require('../logger');
 const ComponentController = {
   addComponent: async component => {
     log(component);
+    //TODO: make sure that component has all required fields, otherwise return false
+    // const {name, author, componentString, jsx, description, tags} = component;
     const db = getDb();
-    // Get the documents collection
-    const collection = db.collection('test');
-    // Insert some documents
-    collection.insertMany([{a: 1}, {a: 2}, {a: 3}], function(err, result) {
+    const collection = db.collection('components');
+    collection.insert(component, function(err, result) {
+      if (err) return false;
       assert.equal(err, null);
-      assert.equal(3, result.result.n);
-      assert.equal(3, result.ops.length);
-      log('Inserted 3 documents into the collection');
+      assert.equal(1, result.result.n);
+      assert.equal(1, result.ops.length);
+      log('Inserted 1 component into the collection');
     });
     return true;
-    // const {name, author, componentString, jsx, description, tags} = component;
   },
 
   getComponent: async id => {
