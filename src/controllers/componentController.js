@@ -5,11 +5,6 @@ const {log} = require('../logger');
 const ComponentController = {
   addComponent: async component => {
     log(component);
-    return true;
-    // const {name, author, componentString, jsx, description, tags} = component;
-  },
-
-  getComponent: async id => {
     const db = getDb();
     // Get the documents collection
     const collection = db.collection('test');
@@ -20,6 +15,11 @@ const ComponentController = {
       assert.equal(3, result.ops.length);
       log('Inserted 3 documents into the collection');
     });
+    return true;
+    // const {name, author, componentString, jsx, description, tags} = component;
+  },
+
+  getComponent: async id => {
     return id;
   },
 };
