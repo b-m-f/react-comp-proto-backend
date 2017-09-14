@@ -1,5 +1,5 @@
 const express = require('express');
-const Routes = require('./routes.mjs');
+const Routes = require('./routes');
 const DatabaseAdapter = require('./database');
 const {log} = require('./logger');
 
